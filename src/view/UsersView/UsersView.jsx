@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import usersViewMenu from 'globals/usersViewMenu';
 import Button from 'globals/UIComponents/Button/Button';
 
 const UsersView = () => {
     return (
-        <section className="p-14">
+        <section className="p-8">
             <div className="flex flex-row justify-between border-[#E5DBEE] border-b-2">
                 <ul className="flex flex-row justify-between basis-2/4 text-grey text-2xl">
                    {usersViewMenu.map(({name,key}) => (

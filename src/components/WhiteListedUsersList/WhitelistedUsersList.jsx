@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import Input from 'globals/UIComponents/Input/Input';
 import { CSVUploadModal } from 'globals/UIComponents/Modal';
 import CSVUploader from 'components/CSVUploader/CSVUploader';
@@ -16,11 +16,15 @@ const WhitelistedUsersList = () => {
         <section className="flex flex-row justify-between items-center pt-4 pb-4">
                <Input type="text" placeholder="Search user" classes="basis-3/4" id="user-search" />
                <div className="flex justify-between basis-1/4 pl-8">
-                   <select name="allUsers" id="all-users">
-
+                   <select className="rounded-2xl p-2 text-sm" name="allUsers" id="all-users">
+                        <option value="">All Users</option>
+                        <option value="">Few Users</option>
+                        <option value="">No Users</option>
                    </select>
-                   <select name="allStatus" id="all-status">
-                       
+                   <select className="rounded-2xl p-2 text-sm" name="allStatus" id="all-status">
+                        <option value="">All Status</option>
+                        <option value="">Few Status</option>
+                        <option value="">No Status</option>
                     </select>
                </div>
         </section>
