@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'rodal/lib/rodal.css';
-
 * {
     box-sizing: border-box;
     padding: 0;

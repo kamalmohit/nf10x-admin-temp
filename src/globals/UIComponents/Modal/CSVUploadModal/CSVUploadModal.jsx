@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Rodal from 'rodal';
 const CSVUploadModal = ({visible, setVisible, file}) => {
     const modalStyles = {
