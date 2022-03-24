@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import Input from 'globals/UIComponents/Input/Input';
 import { CSVUploadModal } from 'globals/UIComponents/Modal';
 import CSVUploader from 'components/CSVUploader/CSVUploader';
