@@ -11,6 +11,11 @@ const usersViewMenu = [
         name: "Waitlisted",
         key: "waitlisted"
     }
-]
+];
 
-export default usersViewMenu;
+const whiteListedMenuFilters = {
+    users: [],
+    status: [],
+}
+
+export {usersViewMenu, whiteListedMenuFilters};

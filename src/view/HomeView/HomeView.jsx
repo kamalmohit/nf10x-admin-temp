@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom';
 import DashboardHeader from 'components/DashboardHeader/DashboardHeader';
 const HomeView = () => {
     return (
-        <main className="min-h-screen">
+        <React.Fragment>
             <DashboardHeader />
             <Outlet />
-        </main>
+        </React.Fragment>
     )
 }
 

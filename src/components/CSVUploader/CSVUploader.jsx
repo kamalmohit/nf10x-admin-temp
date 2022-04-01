@@ -9,7 +9,9 @@ const CSVUploader = ({onFileUpload}) => {
     return (
         <React.Fragment>
             <input className="hidden" ref={uploadButton} type="file" onChange={(e) => onFileUpload(e.target.files[0])} />
-            <Button text="Upload CSV" classes="w-[225px] text-[16px] mt-10" callback={uploadCSVHandler} />
+            <Button classes="w-[225px] text-[16px] mt-6" onClick={uploadCSVHandler}>
+                Upload CSV
+            </Button>
         </React.Fragment>
     )
 };

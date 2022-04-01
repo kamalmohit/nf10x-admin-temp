@@ -6,8 +6,8 @@ This codebase is the **CMS/CRM admin panel for the customer facing website of th
 
 ### Tech Stack
 
-- ReactJS
-- TailwindCSS
+- ReactJS (17.0.2)
+- TailwindCSS (3.0.23)
 - Redux-Thunk
 - React Router
 ### Getting started with the development

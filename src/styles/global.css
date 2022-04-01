@@ -1,3 +1,4 @@
+@import url('./fonts.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,12 +6,54 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Inter-Regular";
+}
+
+body {
+    overflow-y: auto;
 }
 
 body,
 #root {
-    min-height: 100vh;
     @apply bg-main;
-    overflow: hidden;
+    height: 100vh;
+}
+
+
+table,
+colgroup {
+    width: 100%;
+}
+
+thead {
+    @apply text-tableHeader;
+    @apply text-xs;
+}
+
+tr {
+    border-bottom: 1px solid #E5DBEE;
+}
+
+.rc-table::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.rc-table::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+.rc-table::-webkit-scrollbar-thumb {
+    @apply bg-main;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.error {
+    color: red;
+    font-weight: 500;
+    font-size: 12px;
 }

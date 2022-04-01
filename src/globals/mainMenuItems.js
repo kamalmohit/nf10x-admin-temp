@@ -4,12 +4,12 @@
 
 const menuItems = [
     {
-        name: "Dashboard",
-        key: "dashboard",
-    },
-    {
         name: "Users",
         key: "users",
+    },
+    {
+        name: "Cohorts",
+        key: "cohorts",
     },
     {
         name: "Events",
@@ -18,6 +18,10 @@ const menuItems = [
     {
         name: "Mentors",
         key: "mentors",
+    },
+    {
+        name: "Content Hub",
+        key: "content-hub",
     },
 ]
 
