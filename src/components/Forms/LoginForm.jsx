@@ -33,7 +33,7 @@ const LoginForm = (props) => {
                         <ErrorMessage name="password">{msg => <span className="error">{msg}</span>}</ErrorMessage>
                     </div>
                     <div className="mb-2">
-                        <button onClick={props.handleForgotPassword}>Forgot Password?</button>
+                        <button type="button" onClick={props.handleForgotPassword}>Forgot Password?</button>
                     </div>
                     <Button type="submit" text="Login" classes="w-full text-[18px] flex justify-center items-center">
                         {formProps.isSubmitting ? <img className="w-6 h-6 mr-2" src={Puff} alt="sadsd" /> :
