@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Input, FileUpload, LongText, DateSelector, TimeSelector, RadioGroup } from 'globals/UIComponents/FormComponents';
+import { Input, FileUpload, LongText, DateSelector, TimeSelector } from 'globals/UIComponents/FormComponents';
 import Button from 'globals/UIComponents/Button/Button';
 import DummyImage from 'assets/dummyeventimage.svg';
 
