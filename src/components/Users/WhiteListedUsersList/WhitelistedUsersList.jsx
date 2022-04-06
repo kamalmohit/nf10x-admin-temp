@@ -12,7 +12,7 @@ import NF10XTable from 'globals/UIComponents/NF10XTable/NF10XTable';
 import {RemoveModal, BlockModal} from 'components/ConfirmationModal';
 
 const customMenuButton = (
-  <button className="bg-grey p-1 rounded-3xl opacity-50 hover:opacity-40 ease-in">
+  <button className="float-right bg-grey p-1 rounded-3xl opacity-50 hover:opacity-40 ease-in">
     <img className="w-4 h-4" src={MenuDots} alt="Menu" />
   </button>
 )
@@ -33,51 +33,51 @@ const WhitelistedUsersList = () => {
     }
     const whiteListedUsers = [
       {
-        title: 'Name/Email',
+        title: 'NAME/EMAIL',
         dataIndex: 'user',
         key: 'user',
-        width: 300,
+        width: 200,
         className: "text-left p-4 font-normal",
         render: (value) => (
         <div className="flex flex-col">
-          <span className="font-bold text-md">{value.email}</span>
-          <span className="font-medium text-sm">{value.name}</span>
+          <span className="font-bold text-sm mb-1">{value.email}</span>
+          <span className="font-medium text-xs text-lightGrey">{value.name}</span>
         </div>
         )
       },
       {
-        title: 'Invited On',
+        title: 'INVITED ON',
         dataIndex: 'invited',
         key: 'age',
-        width: 250,
+        width: 200,
         className: "text-left p-4 font-normal",
-        render: (value) => <span className="font-bold text-md">{value}</span>
+        render: (value) => <span className="font-medium text-md">{value}</span>
       },
       {
-        title: 'Joined On',
+        title: 'JOINED ON',
         dataIndex: 'joined',
         key: 'address',
-        width: 250,
+        width: 200,
         className: "text-left p-4 font-normal",
-        render: (value) => <span className="font-bold text-md">{value}</span>
+        render: (value) => <span className="font-medium text-md">{value}</span>
       },
       {
-        title: 'Token Type',
+        title: 'TOKEN TYPE',
         dataIndex: 'token',
         key: 'token',
-        width: 150,
+        width: 100,
         className: "text-left p-4 font-normal",
-        render: (value) => <span className="font-bold text-sm bg-purple p-2">{value}</span>
+        render: (value) => <span className="uppercase font-normal text-xs bg-purple p-2">{value}</span>
       },
       {
-        title: 'Status',
+        title: 'STATUS',
         dataIndex: 'status',
         key: 'status',
-        width: 250,
+        width: 200,
         className: "text-left p-4 font-normal",
         render: (value,record,key) => 
-        <div className="flex justify-between items-center relative">
-          <span className="font-normal text-sm uppercase">{value}</span> 
+        <div className="relative">
+          <span className="font-normal text-xs uppercase">{value}</span> 
           <Menu align="end" menuButton={customMenuButton} transition>
             <MenuItem value="remove" onClick={() => handleRemoveConfirmationModal(value,record,key)} className="text-black hover:bg-purple">Remove</MenuItem>
             <MenuItem value="block" onClick={() => handleBlockConfirmationModal(value, record, key)}  className="text-black hover:bg-purple">Block</MenuItem>
@@ -86,7 +86,7 @@ const WhitelistedUsersList = () => {
       },
     ]; 
       const data = [
-        { user: {name: 'Mohit', email: 'mohit@gmail.com'} , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', status: 'Member', key: '1' },
+        { user: {name: 'Mohit', email: 'mohitdsadsadsasdsdsds@gmail.com'} , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', status: 'Member', key: '1' },
         { user: {name: 'Mohit', email: 'mohit@gmail.com'} , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', status: 'Member', key: '2' },
         { user: {name: 'Mohit', email: 'mohit@gmail.com'} , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', status: 'Member', key: '3' },
         { user: {name: 'Mohit', email: 'mohit@gmail.com'} , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', status: 'Member', key: '4' },

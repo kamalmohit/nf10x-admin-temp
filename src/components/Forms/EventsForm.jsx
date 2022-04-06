@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Input, FileUpload, LongText, DateSelector, TimeSelector } from 'globals/UIComponents/FormComponents';
+import Button from 'globals/UIComponents/Button/Button';
 
 const EventsForm = (props) => {
     const initialValues = {
@@ -19,8 +20,8 @@ const EventsForm = (props) => {
     }
     return (
         <React.Fragment>
-            {props.formHeader ? <h2 className="font-bold text-3xl mb-8">{props.formHeader}</h2> : null}
-            <h3 className="font-medium text-xl mb-4">Event Details</h3>
+            {props.formHeader ? <h2 className="font-bold text-4xl mb-8">{props.formHeader}</h2> : null}
+            <h3 className="font-medium text-xl mb-2">Event Details</h3>
             <Formik initialValues={initialValues}>
                 {(formProps) => (
                     <Form>
@@ -77,7 +78,7 @@ const EventsForm = (props) => {
 
                         <Field type="text" component={Input} name="eventLink" placeholder="Event Link" />
                         <ErrorMessage name="eventLink" />
-
+                        <Button type="submit" classes="w-full rounded-2xl mt-2">Continue</Button>
                     </Form>
                 )}
             </Formik>

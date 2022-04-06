@@ -17,8 +17,13 @@ module.exports = {
         grey: "#8A8A8A",
         tableHeader: "#636380",
         purple: '#883BE9',
+        lightGrey: "#41415D",
+        active: '#00693D',
+        expired: '#2E2E2E'
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

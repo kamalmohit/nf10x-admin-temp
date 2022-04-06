@@ -14,7 +14,7 @@ const usersViewMenu = [
 ];
 
 const whiteListedMenuFilters = {
-    users: [],
+    users: ['all', 'founding-members', 'general-members'],
     status: [],
 }
 
