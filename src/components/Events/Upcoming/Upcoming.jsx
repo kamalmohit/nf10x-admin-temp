@@ -17,7 +17,7 @@ const customMenuButton = (
     </button>
 )
 const UpcomingEvents = () => {
-    const {remove, hide} = useOutletContext();
+    const {remove, hide, newEventForm} = useOutletContext();
     const handleRemoveConfirmationModal = (value, record, key) => {
         remove[1](true);
       }
@@ -32,7 +32,7 @@ const UpcomingEvents = () => {
           key: 'user',
           className: "text-left p-4 font-normal w-10",
           render: (value) => (
-          <div className="flex flex-col line-clamp-2 max-w-[150px]">
+          <div className="flex flex-col line-clamp-2 max-w-[250px]">
             <span className="font-bold text-md mb-1 text-ellipsis overflow-hidden">{value}</span>
           </div>
           )
@@ -87,7 +87,6 @@ const UpcomingEvents = () => {
         },
       ];
 
-      
       const data = [
         { user: 'Web 3.0 seminar dsadj dsajldnsdsadsa dsad sad ad salkdn dkslads dsad dasdknkd sad;ksadmsad sdksadasmdlkdnsakdnsladnslkdnsaldnlsakdnlksadnldsa s dsad sad sa ds dsad saksadnlksandlksandlksandlksndlksanlkdnas' , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Project Debriefs', '10x': 'Member', cohort: {number: 4, group: 'A'}, key: '1' },
         { user: 'The Nature of Exclusivity in Crypto & Web 3 The Nature of Exclusivity in Crypto & Web 3' , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Project Debriefs', '10x': 'Member', cohort: {number: 4, group: 'A'}, key: '1' },
@@ -108,13 +107,16 @@ const UpcomingEvents = () => {
         { user: 'Web 3.0 seminar' , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', '10x': 'Member', cohort: {number: 4, group: 'A'}, key: '1' },
         { user: 'Web 3.0 seminar' , invited: '22 July, 2021 • 5d ago', joined: '22 July, 2021 • 5d ago', token: 'Founder', '10x': 'Member', cohort: {number: 4, group: 'A'}, key: '1' },
       ]
+
+      
+     
     return (
         <div className="mt-4">
-            {data.length ? <NF10XTable columns={activeusers} data={data} /> :               
+            {data && data.length ? <NF10XTable columns={activeusers} data={data} /> :               
             <section className="flex flex-col items-center pt-10">
                 <img src={EmptyIcon} alt="Empty Events" />
                 <h2 className="font-normal">There are no events scheduled</h2>
-                <Button classes="mb-1 mt-2 w-60 text-md flex justify-center items-center">
+                <Button onClick={() => newEventForm[1](true)} classes="mb-1 mt-2 w-60 text-md flex justify-center items-center">
                     <img className="mr-2 w-3 h-3" src={PlusSign} alt="Add member plus sign" />
                     <span>Create New Event</span>
                 </Button> 

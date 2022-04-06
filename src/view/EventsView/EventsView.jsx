@@ -17,11 +17,16 @@ const Drawer = React.lazy(() => import('react-modern-drawer'));
 
 const EventsView = () => {
     const formikContext = useFormik(EventsForm);
+
     const [isOpen, setOpen] = useState(false);
     const [showRemoveModal, setShowRemoveModal] = useState(false);
     const [showHideModal, setShowHideModal] = useState(false);
+
     const [usersFilter, setUsersFilter] = useState('all-users');
     const [statusFilter, setStatusFilter] = useState(['all-members']);
+
+    const [newEvents, setNewEvent] = useState([]);
+
     const toggleDrawer = () => {
         setOpen((prevState) => !prevState);
         formikContext.resetForm();
@@ -47,7 +52,7 @@ const EventsView = () => {
                     <ul className="flex flex-row justify-start basis-3/5 text-grey text-xl">
                         {eventsMenuItems.map(({name,key}) => (
                             <NavLink key={key} className={({isActive}) => isActive ? "flex flex-nowrap font-medium mr-6 max-w-xs w-fit self-end text-black border-black border-b-2 pb-1" : "flex max-w-xs mr-6 pb-1 w-fit self-end hover:border-b-2 hover: border-black ease-in-out duration-100"} to={`/home/events/${key}`}>
-                                {name} <span className="ml-1 text-purple">{key === 'upcoming' ? 100 : 0}</span>
+                                {name} <span className="ml-1 text-purple">{key === 'upcoming' ? 200 : 0}</span>
                             </NavLink>
                         ))}
                     </ul>
@@ -64,7 +69,7 @@ const EventsView = () => {
                 size="450px"
                 className="p-4 overflow-scroll"
             >
-                <EventsForm formHeader="New Event" />
+                <EventsForm setNewEvent={setNewEvent} closeDrawer={setOpen} formHeader="New Event" />
             </Drawer>
             <section className="flex flex-row justify-between items-center pt-2 pb-2">
               <Input type="text" placeholder="Search user" classes="basis-2/4" id="user-search" />
@@ -98,7 +103,9 @@ const EventsView = () => {
             </section>
             <Outlet context={{
                 remove: [showRemoveModal, setShowRemoveModal],
-                hide: [showHideModal, setShowHideModal]
+                hide: [showHideModal, setShowHideModal],
+                data: [newEvents, setNewEvent],
+                newEventForm: [isOpen, setOpen]
             }} />
         </section>
     )

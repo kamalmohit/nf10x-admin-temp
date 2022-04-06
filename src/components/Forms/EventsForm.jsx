@@ -1,7 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Input, FileUpload, LongText, DateSelector, TimeSelector } from 'globals/UIComponents/FormComponents';
+import { Input, FileUpload, LongText, DateSelector, TimeSelector, RadioGroup } from 'globals/UIComponents/FormComponents';
 import Button from 'globals/UIComponents/Button/Button';
+import DummyImage from 'assets/dummyeventimage.svg';
 
 const EventsForm = (props) => {
     const initialValues = {
@@ -16,15 +17,23 @@ const EventsForm = (props) => {
         speakerDesc: "",
         speakerSocialMedia: "",
         eventAsc: "",
-        eventLink: ""
+        eventLink: "",
+        eventPlatform: "",
+    }
+
+    const handleNewEventSubmit = (values, actions) => {
+        props.setNewEvent(prevState => [...prevState, { user: values.eventTitle , invited: values.eventDate, joined: values.eventTime, token: values.eventType, '10x': 'Member', cohort: {number: 4, group: 'A'}, key: '1' }])
+        props.closeDrawer(false);
+        actions.resetForm(initialValues);
     }
     return (
         <React.Fragment>
             {props.formHeader ? <h2 className="font-bold text-4xl mb-8">{props.formHeader}</h2> : null}
             <h3 className="font-medium text-xl mb-2">Event Details</h3>
-            <Formik initialValues={initialValues}>
+            <Formik initialValues={initialValues} onSubmit={handleNewEventSubmit}>
                 {(formProps) => (
                     <Form>
+                        {console.log(formProps)}
                         <Field type="text" component={Input} name="eventTitle" placeholder="Title" />
                         <ErrorMessage name="eventTitle" />
                         <Field type="file" component={FileUpload} name="eventImage" placeholder="Drag image from your computer.Supports: JPG, PNG | 6:4 ratio" />
@@ -55,9 +64,15 @@ const EventsForm = (props) => {
 
                     <h3 className="font-medium text-xl mb-4 mt-6">Speaker Details</h3>
 
-                        
-                        <Field type="file" component={FileUpload} name="speakerImage" placeholder="Drag image from your computer.Supports: JPG, PNG | 6:4 ratio" />
-                        <ErrorMessage name="speakerImage" />
+                        <div className="flex">
+                            <div className="self-start basis-1/4 mr-2 mt-2">
+                                <img src={DummyImage} alt="Dummy" className="w-full h-full" />
+                            </div>
+                            <div className="basis-3/4 self-start">
+                                <Field type="file" component={FileUpload} name="speakerImage" placeholder="Drag image from your computer.Supports: JPG, PNG | 6:4 ratio" />
+                                <ErrorMessage name="speakerImage" />
+                            </div>
+                        </div>
 
                         <Field type="text" component={Input} name="speakerName" placeholder="Name" />
                         <ErrorMessage name="speakerName" />
@@ -74,7 +89,6 @@ const EventsForm = (props) => {
                         <ErrorMessage name="eventAsc" />
                     
                     <h3 className="font-medium text-xl mb-4 mt-6">Hosted On</h3>
-
 
                         <Field type="text" component={Input} name="eventLink" placeholder="Event Link" />
                         <ErrorMessage name="eventLink" />

@@ -95,7 +95,7 @@ const PastEvents = () => {
             {data.length ? <NF10XTable columns={activeusers} data={data} /> :               
             <section className="flex flex-col items-center pt-10">
                 <img src={EmptyIcon} alt="Empty Events" />
-                <h2 className="font-medium text-lg">There are no past events</h2>
+                <h2 className="font-normal">There are no past events</h2>
             </section >}
             <DeleteModal visible={remove[0]} setVisible={remove[1]} />
             <BlockModal visible={hide[0]} setVisible={hide[1]} />
