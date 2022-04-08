@@ -32,12 +32,12 @@ const MentorCard = () => {
                 <p className="mt-4 font-medium text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero, dictum adipiscing sed eu nibh laoreet.</p>
             </div>
             <div className="flex justify-end p-4">
-                <a href="#">
+                <button>
                     <img className='mr-4' src={World} alt="" />
-                </a>
-                <a href="#">
+                </button>
+                <button>
                     <img src={Twitter} alt="" />
-                </a>
+                </button>
             </div>
         </div>
     )
