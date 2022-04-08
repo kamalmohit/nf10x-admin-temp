@@ -19,6 +19,8 @@ const DashboardHeader = () => {
                 return `${key}/whitelist`;
             case 'events':
                 return `${key}/upcoming`;
+            case 'cohorts':
+                return `${key}/all-cohorts`;
             default:
                 return `/home/${key}`;
         }
@@ -35,7 +37,7 @@ const DashboardHeader = () => {
     return (
         <header className="sticky top-0 left-0 z-10 w-full flex flex-row justify-between bg-black text-grey h-14 pl-6 pr-6">
             <span onClick={handleHomeNavigation} className="self-center flex items-center cursor-pointer">
-                <img src={Logo} alt="Logo small" className="mr-2" />NF10X
+                <img src={Logo} alt="Logo small" className="mr-2" /><span className="text-white">NF10X</span>
             </span>
             <ul className="flex flex-row basis-1/3 justify-between pl-1 pr-1 pt-4 text-md font-normal">
                 {menuItems.map(({name,key}) => (

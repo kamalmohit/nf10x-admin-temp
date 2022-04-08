@@ -6,7 +6,7 @@ import {
     MenuButton,
     MenuRadioGroup,
   } from '@szhsin/react-menu';
-import {usersViewMenu} from 'globals/usersViewMenu';
+import {usersViewMenu} from 'globals/usersViewMenuItems';
 import Button from 'globals/UIComponents/Button/Button';
 import Input from 'globals/UIComponents/SearchInput/SearchInput';
 import DownwardCaret from 'assets/Dashboard/downward-caret.svg';

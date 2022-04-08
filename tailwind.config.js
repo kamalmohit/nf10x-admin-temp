@@ -10,6 +10,7 @@ module.exports = {
       "purple": "#E5DBEE",
       "grey": "#8A8A8A",
       "form": '#F3F3F3',
+      "activeGreen": '#00693D33'
     },
     extend: {
       colors: {

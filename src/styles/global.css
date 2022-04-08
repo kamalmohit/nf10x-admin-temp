@@ -25,14 +25,17 @@ colgroup {
     width: 100%;
 }
 
+.rc-table-tbody tr:not(:last-child) {
+    border-bottom: 1px solid #E5DBEE;
+}
+
 thead {
     @apply text-tableHeader;
     @apply text-xs;
-}
-
-tr {
     border-bottom: 1px solid #E5DBEE;
 }
+
+
 
 .rc-table::-webkit-scrollbar {
     width: 5px;
